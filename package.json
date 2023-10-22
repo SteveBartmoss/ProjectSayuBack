@@ -1,0 +1,15 @@
+{
+  "name": "tableroback",
+  "version": "1.0.0",
+  "description": "Este proyecto se crea para un app de tablero que permita implementar un tablero que colabore a la organizacion de un area de desarrollo de software o cualquier otra que requiera una forma de organizar el trabajo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
