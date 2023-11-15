@@ -11,11 +11,11 @@ export const getUsuarios=async(req,res)=>{
 
 export const createUsuario=async(req,res)=>{
 
-    const {titulo,descripcion,autor}=req.body;
+    const {usuario,pass,rol}=req.body;
 
     try{
-        const [result]=await conexion.query('INSERT INTO nota (titulo,descripcion,autor) VALUES (?,?,?)',
-        [titulo,descripcion,autor]);
+        const [result]=await conexion.query('INSERT INTO usuarios (usuario,pass,rol) VALUES (?,?,?)',
+        [usuario,pass,rol]);
 
         res.send({
             code: 7,
