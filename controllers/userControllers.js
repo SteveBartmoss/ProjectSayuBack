@@ -27,3 +27,22 @@ export const createUsuario=async(req,res)=>{
     }
 }
 
+export const updateUsuario=async(req,res)=>{
+    
+    const {usuario,pass,rol}=req.body;
+
+    try{
+        
+        const [result]=await conexion.query('UPDATE usuarios SET usuario=?,pass=?,rol=? WHERE idusuario=?',
+        [usuario,pass,rol]);
+
+        res.send({
+            code: 5,
+            info: result
+        })
+
+    }catch(error){
+        return res.status(500).json({message: error.message});
+    }
+}
+
