@@ -12,7 +12,7 @@ create table listas(
     titulo varchar(30) not null
 );
 
-create table tarea(
+create table tareas(
     idtarea int auto_increment primary key,
     titulo varchar(30) not null,
     descripcion varchar(256) not null,
@@ -27,7 +27,7 @@ create table tarea(
     foreign key (lista) references listas (idlista)
 );
 
-create table nota(
+create table notas(
     idnota int auto_increment primary key,
     titulo varchar(30) not null,
     descripcion varchar(256) not null,
