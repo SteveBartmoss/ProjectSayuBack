@@ -46,3 +46,15 @@ export const updateUsuario=async(req,res)=>{
     }
 }
 
+export const deleteUsuario=async(req,res)=>{
+
+    const id=req.params.id;
+
+    try{
+        const [result]=await conexion.query('DELETE FROM usuarios WHERE idusuario=?',
+        [id]);
+    }catch(error){
+        return res.status(500).json({message: error.message});
+    }
+}
+
