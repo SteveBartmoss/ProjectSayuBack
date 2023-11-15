@@ -27,5 +27,14 @@ create table tarea(
     foreign key (lista) references listas (idlista)
 );
 
+create table nota(
+    idnota int auto_increment primary key,
+    titulo varchar(30) not null,
+    descripcion varchar(256) not null,
+    autor int,
+    constraint autor
+    foreing key (autor) references usuario (idusuario)
+);
+
 
 
