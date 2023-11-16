@@ -9,3 +9,7 @@ export const getNotas=async(req,res)=>{
         return res.status(500).json({message: error.message});
     }
 }
+
+export const createNota=(req,res)=>{
+    
+}
