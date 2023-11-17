@@ -10,6 +10,16 @@ export const getNotas=async(req,res)=>{
     }
 }
 
-export const createNota=(req,res)=>{
-    
+export const createNota=async(req,res)=>{
+    const {titulo,descripcion,autor}=req.body;
+    try{
+        const [result]=await conexion.query('INSERT INTO notas (titulo,descipcion,autor) VALUES (?,?,?)',
+        [titulo,descripcion,autor]);
+        res.json({
+            code: 7,
+            info: result
+        });
+    }catch(error){
+        return res.status(500).json({message: error.message});
+    }
 }
