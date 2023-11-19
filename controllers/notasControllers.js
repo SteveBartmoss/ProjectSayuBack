@@ -27,7 +27,7 @@ export const createNota=async(req,res)=>{
 export const deleteNota=async(req,res)=>{
     const id=req.params.id;
     try{
-
+        const [result]=await conexion.query('DELETE FROM nota WHERE idnota=?',[id]);
     }catch(error){
         return res.status(500).json({message: error.message});
     }
