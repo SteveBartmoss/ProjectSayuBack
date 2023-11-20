@@ -33,6 +33,7 @@ export const deleteNota=async(req,res)=>{
                 message: 'No se borro la nota'
             });
         }
+        res.sendStatus(204);
     }catch(error){
         return res.status(500).json({message: error.message});
     }
