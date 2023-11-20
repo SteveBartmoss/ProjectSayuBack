@@ -28,6 +28,11 @@ export const deleteNota=async(req,res)=>{
     const id=req.params.id;
     try{
         const [result]=await conexion.query('DELETE FROM nota WHERE idnota=?',[id]);
+        if(result.affectedRows<=0){
+            return res.status(404).json({
+                message: 'No se borro la nota'
+            });
+        }
     }catch(error){
         return res.status(500).json({message: error.message});
     }
