@@ -24,6 +24,15 @@ export const createNota=async(req,res)=>{
     }
 }
 
+export const updateNota=async(req,res)=>{
+    const {titulo,descripcion}=req.body;
+    try{
+
+    }catch(error){
+        return res.status(500).json({message: error.message});
+    }
+}
+
 export const deleteNota=async(req,res)=>{
     const id=req.params.id;
     try{
