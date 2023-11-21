@@ -27,7 +27,7 @@ export const createNota=async(req,res)=>{
 export const updateNota=async(req,res)=>{
     const {titulo,descripcion}=req.body;
     try{
-
+        const [result]=await conexion.query('UPDATE notas SET titulo=?, descripcion=? WHERE');
     }catch(error){
         return res.status(500).json({message: error.message});
     }
