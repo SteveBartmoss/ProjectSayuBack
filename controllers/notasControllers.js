@@ -1,9 +1,9 @@
 import { conexion } from "../config/conexion.js";
 
 export const getNotas=async(req,res)=>{
-    const idusuario=req.params.id
+    const idUsuario=req.params.id
     try{
-        const [result] = await conexion.query('SELECT * FROM notas WHERE autor=?',[idusuario]);
+        const [result] = await conexion.query('SELECT * FROM notas WHERE autor=?',[idUsuario]);
         res.json(result);
     }catch(error){
         return res.status(500).json({message: error.message});
@@ -30,7 +30,10 @@ export const updateNota=async(req,res)=>{
     try{
         const [result]=await conexion.query('UPDATE notas SET titulo=?, descripcion=? WHERE idnota=?',
         [titulo,descripcion,id]);
-
+        res.json({
+            code: 5,
+            info: result
+        });
     }catch(error){
         return res.status(500).json({message: error.message});
     }
