@@ -10,3 +10,12 @@ export const getTareas=async(req,res)=>{
         return res.status(500).json({message: error.message});
     }
 }
+
+export const createTarea=async(req,res)=>{
+    const {titulo,descripcion,inicio}=req.body;
+    try{
+
+    }catch(error){
+        return res.status(500).json({message: error.message});
+    }
+}
