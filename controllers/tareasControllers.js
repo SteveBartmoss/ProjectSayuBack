@@ -19,3 +19,12 @@ export const createTarea=async(req,res)=>{
         return res.status(500).json({message: error.message});
     }
 }
+
+export const deleteTarea=async(req,res)=>{
+    const idTarea=req.params.id;
+    try{
+
+    }catch(error){
+        return res.status(500).json({message: error.message});
+    }
+}
