@@ -21,4 +21,13 @@ create table userProfile(
         on update cascade
 );
 
+create table permissions(
+    id int auto_increment primary key,
+    idUser int,
+    privilege varchar(60),
 
+    constraint permissionsIdUser
+        foreign key (idUser) references users (id)
+        on delete set null
+        on update cascade
+);
