@@ -31,3 +31,10 @@ create table permissions(
         on delete set null
         on update cascade
 );
+
+create table task{
+    id int auto_increment primary key,
+    title varchar(60),
+    stateTask varchar(30),
+    descriptionTask varchar(250),
+}
